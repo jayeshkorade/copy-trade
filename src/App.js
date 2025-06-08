@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import UserHome from './pages/UserHome';
 import './App.css';
 
 function AppWrapper() {
@@ -15,6 +16,7 @@ function AppWrapper() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/" element={<Login />} />
+        <Route path="/user-home" element={<UserHome />} />
       </Routes>
     </div>
   );

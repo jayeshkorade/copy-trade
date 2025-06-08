@@ -22,7 +22,7 @@ const Login = () => {
     console.log('Login submitted:', formData);
     // Add your authentication logic here
     // On successful login:
-    navigate('/dashboard');
+    navigate('/user-home');
   };
 
   return (
