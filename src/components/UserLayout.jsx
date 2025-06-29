@@ -1,11 +1,17 @@
 import React from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
-import { FaHome, FaChartLine, FaUserCog, FaListAlt } from 'react-icons/fa';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaHome, FaChartLine, FaUserCog, FaListAlt, FaSignOutAlt } from 'react-icons/fa';
 
 const UserLayout = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path) => location.pathname === path;
+
+  const handleLogout = () => {
+    // Optional: Clear local/session storage here
+    navigate('/login');
+  };
 
   return (
     <div className="user-dashboard">
@@ -13,7 +19,7 @@ const UserLayout = () => {
         <div className="user-sidebar-title">📊 PMS User</div>
         <ul className="user-nav-menu">
           <li className={isActive('/user/home') ? 'active' : ''}>
-           <label><Link to="/user/home"><FaHome className="icon" /> Home</Link></label> 
+            <label><Link to="/user/home"><FaHome className="icon" /> Home</Link></label>
           </li>
           <li className={isActive('/user/trade-settings') ? 'active' : ''}>
             <Link to="/user/trade-settings"><FaChartLine className="icon" /> Trade Settings</Link>
@@ -24,11 +30,19 @@ const UserLayout = () => {
           <li className={isActive('/user/transaction-history') ? 'active' : ''}>
             <Link to="/user/transaction-history"><FaListAlt className="icon" /> Transaction History</Link>
           </li>
+
+          {/* Logout button */}
+          <li onClick={handleLogout} className="logout-button">
+            <div className="nav-link">
+              <FaSignOutAlt className="icon" />
+              <span>Logout</span>
+            </div>
+          </li>
         </ul>
       </aside>
 
       <main className="user-main-content">
-        <Outlet /> {/* This is where child components render */}
+        <Outlet />
       </main>
     </div>
   );

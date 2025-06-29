@@ -686,3 +686,24 @@ body {
   border-radius: 4px;
   font-weight: 600;
 }
+
+/* Admin Logout Button */
+.logout-button {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  margin-top: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.logout-button .icon {
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
