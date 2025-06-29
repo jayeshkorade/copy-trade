@@ -9,7 +9,7 @@ import AdminLogin from './pages/AdminLogin';
 import TradeManagement from './pages/TradeManagement';
 import ReportsAnalytics from './pages/ReportsAnalytics';
 // import AccountManagement from './components/AccountManagement';
-// import TransactionHistory from './components/TransactionHistory';
+import TransactionHistory from './pages/TransactionHistory';
 import UserLayout from './components/UserLayout'; 
 import './App.css';
 
@@ -39,8 +39,8 @@ function AppWrapper() {
         <Route path="/user" element={<UserLayout />}>
           <Route path="home" element={<UserHome />} />
           <Route path="trade-settings" element={<TradeSettings />} />
-          {/* <Route path="account-management" element={<AccountManagement />} />
-          <Route path="transaction-history" element={<TransactionHistory />} /> */}
+          {/* <Route path="account-management" element={<AccountManagement />} /> */}
+          <Route path="transaction-history" element={<TransactionHistory />} />
         </Route>
       </Routes>
     </div>
