@@ -7,6 +7,7 @@ import TradeSettings from './pages/TradeSettings';
 import AdminReg from './pages/AdminReg';
 import AdminLogin from './pages/AdminLogin';
 import TradeManagement from './pages/TradeManagement';
+import ReportsAnalytics from './pages/ReportsAnalytics';
 // import AccountManagement from './components/AccountManagement';
 // import TransactionHistory from './components/TransactionHistory';
 import UserLayout from './components/UserLayout'; 
@@ -32,6 +33,7 @@ function AppWrapper() {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/" element={<Login />} />
         <Route path="/trade-management" element={<TradeManagement />} />
+        <Route path="/reports-analytics" element={<ReportsAnalytics />} />
 
         {/* Protected User Routes using a common layout */}
         <Route path="/user" element={<UserLayout />}>
